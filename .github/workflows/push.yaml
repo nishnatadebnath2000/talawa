@@ -40,6 +40,10 @@ jobs:
         run: flutter pub get
       - name: Codebase testing
         run: flutter test
+      - uses: codecov/codecov-action@v2
+        with:
+          token: ${{secrets.CODECOV}} 
+          file: ./coverage/lcov.info 
 
   Android-Build:
     name: Testing build for android
